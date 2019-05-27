@@ -4,13 +4,15 @@ require("foundation-sites-loader")
 require("./styles/wingtask.scss");
 require("./elm-mdc.js");
 
-var Elm = require('../src/Main');
+const {Elm} = require('../src/Main');
 
-var flags = {session: (localStorage.session || null),
-             uuidSeed: Math.floor(Math.random()*0x0FFFFFFF)
+var flags = {
+  flags: 6,
+  session: (localStorage.session || null),
+  uuidSeed: Math.floor(Math.random()*0x0FFFFFFF)
 }
 
-var app = Elm.Main.fullscreen(flags);
+var app = Elm.Main.init(flags);
 
 app.ports.storeSession.subscribe(function(session) {
   localStorage.session = session;
