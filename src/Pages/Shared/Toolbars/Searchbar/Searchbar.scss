@@ -1,0 +1,41 @@
+/* st */
+
+.st-Toolbar {
+  color: #9E9E9E;
+  background: $white;
+  input {
+    width: 100%;
+    padding: 20px 0 8px;
+    border: none;
+    background: none;
+    appearance: none;
+    font-size: inherit;
+
+    &::placeholder {
+      transition: mdc-text-field-transition(color);
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+    }
+    // Remove red outline on firefox
+    &:invalid {
+      box-shadow: none;
+    }
+
+  }
+}
+
+.st-Toolbar .lb-Container {
+  background: $white;
+}
+
+.st-Toolbar .lb-Bar {
+  background: $white;
+}
+
+.st-searchForm {
+  width: 80%;
+}
+

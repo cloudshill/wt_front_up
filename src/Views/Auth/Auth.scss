@@ -1,0 +1,51 @@
+//au-Component
+.au-BaseError {
+  color: $alert-color;
+}
+
+.au-ForgotEmailSent {
+  padding: 1rem;
+  color: $success-color;
+  border: 1px solid $success-color;
+}
+
+.au-Input {
+  min-height: rem-calc(93);
+  padding: 0;
+  margin: 0 10%;
+}
+
+.au-Input .mdc-text-field{
+  width:  80%;
+}
+
+.au-SubmitButton {
+  margin: 1.5rem 10%;
+}
+
+.au-HelpLinks {
+  margin-left: 10%;
+}
+.au-Instructions {
+  margin-top: 3rem;
+}
+
+.au-HelpLinks_Link {
+  @include breakpoint(small) {
+    @include mdc-typography('headline6');
+  }
+  @include breakpoint(medium) {
+    @include mdc-typography('headline5');
+  }
+  margin-top: 1.8rem;
+}
+
+
+.au-LoadingBarContainer {
+  margin-top: unset;
+  background: $mdc-theme-primary;
+}
+
+.au-ChangePassword_Password {
+  margin-top: 6rem;
+}

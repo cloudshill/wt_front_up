@@ -1,0 +1,48 @@
+// .namespace-ModuleOrComponent_ChildNode-variant {}
+//si-
+
+.si-NavItem{
+  cursor: pointer;
+  padding-top: rem-calc(10);
+  padding-bottom: rem-calc(10);
+  .material-icons {
+      font-size: rem-calc(36);
+  }
+  @include breakpoint(large down)  {
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+
+
+.si-FabContainer {
+  @include breakpoint(large down)  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: rem-calc(10) 0;
+  }
+  @include breakpoint(xlarge) {
+    margin: rem-calc(25) rem-calc(50) rem-calc(15);
+    padding: 0;
+  }
+}
+
+.si-Fab {
+  @include mdc-fab-base_;
+  @include mdc-fab-container-color(secondary);
+  @include mdc-fab-icon-size(24px);
+  @include mdc-fab-ink-color(on-secondary);
+  @include mdc-states(on-secondary);
+
+
+  @include breakpoint(large up)  {
+    @include mdc-fab--extended_;
+  }
+
+}
+
+.si-NavList {
+  overflow-x: hidden;
+}

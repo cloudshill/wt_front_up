@@ -1,0 +1,9 @@
+.ee-RefreshButton{
+  margin: 1rem 0;
+  @include breakpoint(small) {
+    width: 100%;
+  }
+  @include breakpoint(large) {
+    width: unset;
+  }
+}

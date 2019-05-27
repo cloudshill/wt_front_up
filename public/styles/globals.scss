@@ -1,0 +1,405 @@
+$xlarge-column-height: 92.5%;
+
+body {
+  padding: 0px;
+  margin: 0px;
+  @include breakpoint(medium) {
+    overflow: hidden;
+    background-color: $body-background-color;
+  }
+
+}
+
+.g-GridFrame {
+  @include breakpoint(medium) {
+    height: 100vh;
+  }
+}
+
+.g-XlargeGrid-y {
+  @include breakpoint(xlarge) {
+    @include xy-grid(vertical);
+    @include xy-grid-frame(true);
+  }
+}
+
+.g-Logo {
+  font-family: 'Eczar', sans-serif;
+  font-size: 2.2rem;
+	cursor: pointer;
+}
+
+.g-Logo_Image {
+  width: rem-calc(36);
+  height: rem-calc(36);
+  margin-right: rem-calc(5);
+  padding-bottom: rem-calc(7);
+	cursor: pointer;
+}
+
+.header, .footer {
+  background-color: #ddd;
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  height: rem-calc(64);
+  width: 100%;
+  z-index: 10;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  height: rem-calc(64);
+  width: 100%;
+  z-index: 10;
+}
+
+.main {
+  @include breakpoint(medium) {
+    margin-top: rem-calc(64);
+  }
+}
+
+.g-Frame-fixedadjust{
+  @include breakpoint(medium up) {
+    margin-top: 40px;
+    margin-bottom: 76px;
+  }
+}
+
+.cell-block-container > .main-content{
+  height: inherit;
+  @include breakpoint(medium up) {
+    max-height: 90%;
+  }
+}
+
+.cell-block-y{
+  @include breakpoint(xlarge) {
+    min-height: $xlarge-column-height;
+    max-height: 100%;
+  }
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+.border-bottom {
+  border-bottom: 3px solid #e4e4e4;
+}
+
+a, a:hover, a:visited, a:active {
+  color: $dark-blue;
+  text-decoration: none;
+}
+
+.g-SidebarNav, .g-ContentCol{
+  background-color: #fff;
+  @include breakpoint(xlarge) {
+    min-height: $xlarge-column-height;
+    max-height: $xlarge-column-height;
+  }
+}
+
+.g-ContentCol {
+  @include breakpoint(small only) {
+    height: calc(100vh - 138px);
+  }
+}
+
+
+.g-FirstColList {
+  a {
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    span {
+      float: right;
+    }
+  }
+  li.sublist {
+    margin-left: rem-calc(20);
+  }
+}
+
+.g-SnackbarContainer-hide{
+  display: none;
+}
+
+.g-Snackbar {
+  @include breakpoint(small only) {
+    bottom: rem-calc(80);
+    z-index: 2;
+  }
+  @include breakpoint(medium up) {
+    z-index: 100;
+  }
+}
+
+.g-Fab {
+  position: relative;
+  top: -63px;
+  z-index: 1;
+  background-color: $mdc-theme-secondary;
+  pointer-events: auto;
+}
+
+.g-Minifab {
+  position: relative;
+  background-color: lighten($mdc-theme-secondary, 15);
+  left: 14px;
+  z-index: 1;
+  top: -22px;
+}
+
+//Turn off the clear button because it's not supported
+//in Firefox, we'll make our own instead
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+// .mdc-card {
+//   margin-bottom: rem-calc(15);
+// }
+
+// .bottom-fab {
+//   position: fixed;
+//   right: 24px;
+//   bottom: 86px;
+//   z-index: 1;
+// }
+
+
+// .toolbar-picker {
+//   background: $mdc-theme-secondary;
+// }
+
+
+
+// div.task-edit-body {
+//   margin: 1rem 0;
+//   font-size: 1.15rem;
+//   input {
+//     border: none;
+//   }
+//   .field {
+//     margin: 1.5rem 0;
+//   }
+//   .divider {
+//     border-bottom: 1px solid rgba(189,189,189,0.1);
+//   }
+//   .mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box){
+//     margin-top: 0;
+//   }
+//   .date-field {
+//     margin-bottom: 1.2rem;
+// .cancel-button {
+//   margin-top: 1.6rem;
+    // }
+    //   }
+    //   .hide {
+      //     display: none;
+      //   }
+      //   .more-dates{
+        //     font-size: 0.9rem;
+        //   }
+        //   .mdc-dialog {
+          //     background: none;
+          //   }
+          //   .mdc-dialog__surface {
+            //     width: 100%;
+            //   }
+            //   .mdc-dialog__body {
+              //     margin-top: 0;
+              //   }
+              //   .placeholder-gray {
+                //     color: rgba(0,0,0,0.38);
+                //   }
+                //   #recur-dialog, #dirty-dialog, #priority-dialog {
+                  //     width: 40%;
+                  //   }
+                  // }
+
+                  // .toolbar-picker {
+                    //   .mdc-toolbar__icon {
+                      //   }
+                      //   .textfield {
+                      //     padding: 16px 10px;
+                      //     height: 100%;
+                      //     display: flex;
+                      //     flex-direction: column;
+                      //     justify-content: center;
+                      //     input {
+                      //       font-size: 20px;
+                      //       color: #fff;
+                      //       outline: none;
+                      //       border: none;
+                      //       background: $mdc-theme-secondary;
+                      //       &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                      //         color: rgba(255,255,255, 0.7);
+                      //       }
+                      //       &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                      //         color: rgba(255,255,255, 0.7);
+                      //         opacity:  1;
+                      //       }
+                      //       &::-moz-placeholder { /* Mozilla Firefox 19+ */
+                      //         color: rgba(255,255,255, 0.7);
+                      //         opacity:  1;
+                      //       }
+                      //       &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                      //         color: rgba(255,255,255, 0.7);
+                      //       }
+                      //       &::-ms-input-placeholder { /* Microsoft Edge */
+                        //         color: rgba(255,255,255, 0.7);
+                        //       }
+
+                        //       &::placeholder { /* Most modern browsers support this now. */
+                        //         color: rgba(255,255,255, 0.7);
+                        //       }
+
+                        //     }
+                        //   }
+                        //   .done {
+                        //     padding-right: 20px;
+                        //   }
+                        // }
+
+                        // .mdc-list-item{
+                        //   background: #fff;
+                        // }
+                        // :not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {
+                          //   background-color: #fff;
+                          // }
+                          // .mdc-list--avatar-list .mdc-list-item__start-detail {
+                            //   display: inline-flex;
+                            //   justify-content: center;
+                            //   align-items: center;
+                            //   color: #fff;
+                            //   width: 40px;
+                            //   height: 40px;
+                            //   margin-left: 0;
+                            //   margin-right: 16px;
+                            // border-radius: 50%; }
+                            // [dir="rtl"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__start-detail,
+                            // .mdc-list-item[dir="rtl"] .mdc-list--avatar-list .mdc-list-item__start-detail {
+                              //   margin-left: 16px;
+                              // margin-right: 0; }
+
+                              // .show-description {
+                              //   padding-left: rem-calc(72);
+                              // }
+
+                              // .task-content {
+                              //   padding-top: 1rem;
+                              //   padding-bottom: 3rem;
+                              //   .grid-x {
+                              //     padding-bottom: 1rem;
+                              //   }
+                              //   table {
+                              //     td {
+                              //       text-align: right;
+                              //     }
+                              //     td.table-label {
+                              //       text-align: left;
+                              //     }
+                              //   }
+                              // }
+                              // .task-content-label{
+                              //   text-align: left;
+                              //   color: gray;
+                              // }
+
+                              // // .signup-content {
+                              // //   padding-top: 3rem;
+                              // //   .grid-x {
+                              // //     padding-bottom: 1rem;
+                              // //   }
+                              // //   .help-link {
+                              // //       text-decoration: none;
+                              // //       color: $mdc-theme-primary;
+                              // //   }
+                              // // }
+
+                              // .tab-content {
+                              //   padding-top: 2rem;
+                              // }
+                              // .sync-content {
+                              //   .grid-x {
+                              //     padding-bottom: 1rem;
+                              //   }
+                              //   .mdc-button {
+                              //     background-color: $mdc-theme-secondary;
+                              //   }
+                              // }
+                              // .save-button {
+                              //   padding-top: 0;
+                              //   text-align: right;
+                              //   .mdc-button {
+                              //     color: $mdc-theme-secondary;
+                              //   }
+                              // }
+
+                              // .mdc-snackbar {
+                              //   bottom: 80px;
+                              //   &--active {
+                              //     transform: translate(0);
+                              //     transition: mdc-animation-enter(transform, .25s);
+                              //     pointer-events: auto;
+
+                              //     &:not(.mdc-snackbar--align-start) {
+                                //       transform: translate(-50%, 0);
+
+                                //       @media (max-width: ($mdc-snackbar-tablet-breakpoint - 1)) {
+                                  //         bottom: 80px;
+                                  //         left: 0;
+                                  //         width: 100%;
+                                  //         transform: translate(0);
+                                  //       }
+                                  //     }
+                                  //   }
+
+                                  // }
+
+                                  // .context-indicator {
+                                  //   display: flex;
+                                  //   flex-direction: column;
+                                  //   justify-content: center;
+                                  //   align-items: center;
+                                  // }
+
+                                  // .blank-state {
+                                  //   color: #bdbdbd;
+                                  //   text-align: center;
+                                  //   .bt-title {
+                                  //     padding-top: 4rem;
+                                  //   }
+                                  //   .cell {
+                                  //     margin-bottom: 1rem;
+                                  //   }
+
+                                  // }
+
+                                  // .mdc-list-divider {
+                                  //   list-style-type: none;
+                                  // }
+
+                                  // .mdc-button.secondary-text-button {
+                                    //   @include mdc-button-ink-color($mdc-theme-secondary);
+                                    //   @include mdc-states(secondary);
+                                    // }
+
+                                    // .mdc-button.secondary-filled-button {
+                                      //   @include mdc-button-filled-accessible($mdc-theme-secondary);
+                                      // }
+
+                                      // .mdc-button.secondary-stroked-button {
+                                        //   @include mdc-button-ink-color($mdc-theme-secondary);
+                                        //   @include mdc-button-stroke-color($mdc-theme-secondary);
+                                        // }
+

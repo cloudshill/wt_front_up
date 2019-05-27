@@ -1,0 +1,70 @@
+.mdc-bottombar {
+  width: 100%;
+  background: $mdc-theme-primary;
+  .active {
+    color: #fff;
+    a {
+      color: #fff;
+    }
+  }
+  .mdc-toolbar__icon{
+    padding: 0;
+    width: unset;
+    height: unset;
+  }
+
+  .icon-text {
+
+    padding: 16px 12px;
+    span {
+      @include mdc-typography(body2);
+      font-weight: 500;
+    }
+  }
+  a {
+    color: #bdbdbd;
+    text-decoration: none;
+  }
+}
+
+.mdc-bottombar__row {
+  min-height: 56px;
+  height: 80px;
+  align-items: center;
+  height: auto;
+  display: flex;
+  position: relative;
+}
+
+
+.mdc-bottombar--fixed {
+  @include mdc-elevation(4);
+
+  color: #bdbdbd;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.mdc-bottombar__section {
+  justify-content: space-around;
+  display: inline-flex;
+  flex: 1;
+  align-items: flex-start;
+  min-width: 0;
+  height: 80px;
+  z-index: 1;
+}
+
+.mdc-toolbar-fixed-adjust {
+  margin-top: 62px;
+}
+.mdc-bottombar-fixed-adjust {
+  margin-bottom: 70px;
+}
+
+.mdc-toolbar__section--space-around{
+  justify-content: space-around;
+}
+

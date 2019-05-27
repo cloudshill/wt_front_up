@@ -1,0 +1,17 @@
+.td-SmallTopbar {
+  background-color: $mdc-theme-secondary;
+  height: rem-calc(128);
+}
+
+.td-SmallTopbar_Description {
+  padding-left: rem-calc(72);
+}
+
+.td-ClickMessage {
+  text-align: center;
+  padding:  rem-calc(30) 0 0 0;
+}
+
+.td-GoBack {
+  color: lighten($mdc-theme-primary, 20);
+}

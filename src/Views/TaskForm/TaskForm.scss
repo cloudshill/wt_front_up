@@ -1,0 +1,256 @@
+.tf-DescriptionText {
+  width: 100%;
+}
+.tf-FormContainer {
+  @include breakpoint(xlarge) {
+    > .cell-block-y {
+      max-height: 90%;
+    }
+  }
+}
+
+.tf-Form {
+  margin: 1rem 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.15rem;
+  input {
+    border: none;
+  }
+  .mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box){
+    margin-top: 0;
+  }
+  .mdc-dialog {
+    background: none;
+  }
+  .mdc-dialog__surface {
+    @include breakpoint(medium) {
+      width: 40%;
+    }
+    @include breakpoint(xlarge) {
+      width: 100%;
+    }
+  }
+  .mdc-dialog__body {
+    margin-top: 0;
+  }
+  #recur-dialog, #dirty-dialog, #priority-dialog {
+    width: 40%;
+  }
+}
+
+.tf-Form_Field {
+  margin: 1.5rem 0;
+}
+.tf-Form_Divider {
+  border-bottom: rem-calc(1) solid rgba(189,189,189,0.1);
+}
+
+.tf-Form_DialogField {
+  margin-bottom: 1.2rem;
+  .cancel-button {
+    margin-top: 1.6rem;
+  }
+}
+
+.tf-Form_DateField {
+  @include breakpoint(small) {
+    margin-bottom: 1rem;
+  }
+}
+
+.tf-Form_DateField-hide {
+  display: none;
+}
+
+.tf-Form_MoreDatesLink{
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.tf-Form_Link {
+  cursor: pointer;
+}
+
+.tf-Form_Placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.tf-Picker {
+  background: #fff;
+}
+
+.tf-Picker_Toolbar-fixedadjust{
+  @include breakpoint(small only) {
+    margin-top: rem-calc(62);
+  }
+}
+
+.tf-Picker_Toolbar-fixedsmall{
+  @include breakpoint(small only) {
+    @include mdc-elevation(4);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+  }
+}
+
+.tf-Picker_Toolbar {
+  background: $mdc-theme-secondary;
+}
+
+.tf-Picker_TextField {
+  padding: rem-calc(16) rem-calc(10);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  input {
+    font-size: rem-calc(20);
+    color: #fff;
+    outline: none;
+    border: none;
+    background: $mdc-theme-secondary;
+    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color: rgba(255,255,255, 0.7);
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: rgba(255,255,255, 0.7);
+      opacity:  1;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: rgba(255,255,255, 0.7);
+      opacity:  1;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: rgba(255,255,255, 0.7);
+    }
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      color: rgba(255,255,255, 0.7);
+    }
+
+    &::placeholder { /* Most modern browsers support this now. */
+      color: rgba(255,255,255, 0.7);
+    }
+  }
+}
+
+.tf-Picker_ListItem {
+  cursor: pointer;
+}
+
+.tf-DatePicker_Dialog{
+   height: 800px;
+  margin-top: -450px;
+  margin-left: -450px;
+  position: absolute;
+  top: 50%;
+  @include breakpoint(medium) {
+    left: 50%;
+  }
+  @include breakpoint(small) {
+    left: 60%;
+  }
+  width: 800px;
+}
+
+.tf-DatePicker_DialogBody{
+  padding: 0;
+}
+
+.tf-DatePicker_DialogBody .picker{
+  margin-top: rem-calc(104);
+}
+
+.tf-DatePicker_DialogSurface.mdc-dialog__surface {
+  width: rem-calc(310);
+  min-width: rem-calc(310);
+  height: rem-calc(440);
+}
+
+.tf-ClearButton {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+
+.tf-RecurDialog .mdc-dialog__surface {
+  width: rem-calc(310);
+  min-width: rem-calc(310);
+}
+
+.tf-PriorityDialog .mdc-dialog__surface {
+  width: rem-calc(310);
+  min-width: rem-calc(310);
+}
+
+.tf-SmallTopbar {
+  background-color: $mdc-theme-secondary;
+  height: rem-calc(128);
+}
+
+.tf-SmallTopbar_SaveButton.mdc-button:not(:disabled){
+  color: $pure-white;
+}
+
+
+.tf-SmallTopbar_DescriptionInput, #tf-SmallTopbar_DescriptionInput{
+  color: $pure-white;
+  &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $pure-white;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    $pure-white;
+    opacity:  1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    $pure-white;
+    opacity:  1;
+  }
+  &::-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    $pure-white;
+  }
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    color:    $pure-white;
+  }
+
+  &::placeholder { /* Most modern browsers support this now. */
+    color:    $pure-white;
+  }
+ }
+
+.tf-SmallTopbar_DescriptionInput{
+  color: #fff;
+  width: 90%;
+  border: none;
+  background: $mdc-theme-secondary;
+  font-size: 1.3rem;
+  margin: 0 rem-calc(15);
+  &:focus {
+    outline: none !important;
+    border: none!important;
+  }
+  // .mdc-text-field__input {
+  //   font-size: 1.3rem;
+  //   width: 95%;
+  //   margin: 0 15px;
+  //   border: none;
+  //   background: $mdc-theme-secondary;
+  // }
+}
+
+.tf-TagsPicker_DoneLink {
+  cursor: pointer;
+  @include breakpoint(small only) {
+    padding-right: rem-calc(20);
+  }
+}
+.tf-TagsPicker_UnselectedItem {
+  cursor: pointer;
+}
+.tf-BottomSpacer {
+  height: 2rem;
+}

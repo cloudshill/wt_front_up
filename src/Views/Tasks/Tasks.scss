@@ -1,0 +1,23 @@
+// .namespace-ModuleOrComponent_ChildNode-variant {}
+//ta-
+
+.ta-TaskList {
+  @include breakpoint(xlarge) {
+    > .cell-block-y {
+      max-height: 93%;
+    }
+  }
+}
+
+.ta-TaskCard {
+  padding: rem-calc(20) rem-calc(16) rem-calc(0);
+  cursor: pointer;
+}
+
+.ta-TaskCard__content {
+  @include breakpoint(xlarge) {
+    padding: rem-calc(20) rem-calc(16) rem-calc(0);
+    cursor: pointer;
+
+  }
+}

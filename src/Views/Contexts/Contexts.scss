@@ -1,0 +1,15 @@
+.ct-ListDivider {
+  @include breakpoint(medium) {
+    margin-bottom: 1.8rem;
+  }
+  @include breakpoint(small) {
+    margin-bottom: 0.5rem;
+  }
+}
+.ct-ListItem__span {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+

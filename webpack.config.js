@@ -18,7 +18,7 @@ console.log('\x1b[36m%s\x1b[0m', `** elm-webpack-starter: mode "${MODE}", withDe
 
 var common = {
     mode: MODE,
-    entry: "./src/index.js",
+    entry: "./public/index.js",
     output: {
         path: path.join(__dirname, "dist"),
         publicPath: "/",
@@ -28,7 +28,7 @@ var common = {
     plugins: [
         new HTMLWebpackPlugin({
             // Use this template to get basic responsive meta tags
-            template: "src/index.html",
+          template: "public/config/development/index.ejs",
             // inject details of output file at end of body
             inject: "body"
         })
@@ -48,9 +48,18 @@ var common = {
             },
             {
                 test: /\.scss$/,
-                exclude: [/elm-stuff/, /node_modules/],
+                exclude: [/elm-stuff/],
                 // see https://github.com/webpack-contrib/css-loader#url
-                loaders: ["style-loader", "css-loader?url=false", "sass-loader"]
+                use: [
+                  {loader: "style-loader"},
+                  {loader:"css-loader"},
+                  {loader:"sass-loader",
+                    options: {
+                      includePaths: ["node_modules"]
+
+                    }
+                  }
+                ]
             },
             {
                 test: /\.css$/,
@@ -75,6 +84,10 @@ var common = {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 exclude: [/elm-stuff/, /node_modules/],
                 loader: "file-loader"
+            },
+            {
+              test: /app_manifest\.json/,
+              loader: 'file-loader'
             }
         ]
     }
@@ -111,7 +124,7 @@ if (MODE === "development") {
         devServer: {
             inline: true,
             stats: "errors-only",
-            contentBase: path.join(__dirname, "src/assets"),
+            contentBase: path.join(__dirname, "public/assets"),
             historyApiFallback: true,
             // feel free to delete this section if you don't need anything like this
             before(app) {
@@ -138,13 +151,19 @@ if (MODE === "production") {
             // Copy static assets
             new CopyWebpackPlugin([
                 {
-                    from: "src/assets"
+                    from: "public/assets"
                 }
             ]),
             new MiniCssExtractPlugin({
                 // Options similar to the same options in webpackOptions.output
                 // both options are optional
                 filename: "[name]-[hash].css"
+            }),
+            new HTMLWebpackPlugin({
+              // using .ejs prevents other loaders causing errors
+              template: 'public/config/production/index.ejs',
+              // inject details of output file at end of body
+              inject: 'body'
             })
         ],
         module: {

@@ -1,0 +1,57 @@
+
+.tb-TopAppBar {
+  top: 0;
+}
+.tb-LogoSection{
+  @include breakpoint(xlarge) {
+    width: 1%;
+  }
+}
+a.tb-MenuLink,
+a.tb-MenuLink:hover,
+a.tb-MenuLink:visited {
+  color: rgba(0,0,0,0.87);
+}
+
+.tb-CenterSection {
+  width: 100%;
+  @include breakpoint(xlarge) {
+    width: 60%;
+  }
+}
+
+.tb-ContextIndicator {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.tb-ContextBar {
+  margin-top: rem-calc(60);
+  text-align: center;
+  background-color: lighten($mdc-theme-primary, 40);
+  color: white;
+}
+.tb-ContextBadge {
+  padding: 0.6rem;
+  background-color: lighten($mdc-theme-primary, 40);
+  color: white;
+  border-radius: rem-calc(5);
+  text-align: center;
+}
+
+.tb-ContextBadge__icon  {
+  vertical-align: middle;
+  padding-right: 0.3rem;
+}
+
+.tb-ContextBadge__text {
+  margin-right: 0.5rem;
+}
+
+.tb-ContextBar__Content {
+  padding: rem-calc(1);
+}

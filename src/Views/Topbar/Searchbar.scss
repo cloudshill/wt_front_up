@@ -1,0 +1,85 @@
+.sb-Container{
+  margin: 0 auto;
+  background: $white;
+  width: 120%;
+  height: rem-calc(48);
+  background-color: rgba(255,255,255,0.16);
+  -webkit-border-radius: rem-calc(5);
+  -moz-border-radius: rem-calc(5);
+  border-radius: rem-calc(5);
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+
+}
+
+.sb-Input {
+  margin-top: rem-calc(-16);
+  padding-top: 0;
+  margin-left: 0;
+  background-color: transparent;
+  color: rgba(255,255,255,0.7);
+  height: 100%;
+  border: none;
+  outline: none;
+  width: 80%;
+  @include breakpoint(xlarge) {
+    width: 83%;
+  }
+  vertical-align: middle;
+  font-size: rem-calc(16);
+}
+
+.sb-Button__Search, .sb-Button__Clear {
+  color: rgba(0,0,0,0.30);
+}
+
+.sb-Button__Clear:hover {
+  color: rgba(0,0,0,0.30);
+}
+
+.sb-Button__Clear {
+  cursor: pointer;
+}
+
+.sb-Container:focus-within{
+  outline:none;
+  background: #ffffff;
+}
+
+.sb-Container:focus-within .sb-Input{
+  color: rgb(0,0,0);
+}
+
+.sb-Container:focus-within .sb-Button__Search,
+.sb-Container:focus-within .sb-Button__Clear {
+  color: rgba(0,0,0,0.54);
+}
+
+.sb-Input::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.30);
+}
+.sb-Input:-moz-placeholder { /* Firefox 18- */
+  color: rgba(255,255,255,0.30);
+}
+.sb-Input::-moz-placeholder {  /* Firefox 19+ */
+  color: rgba(255,255,255,0.30);
+}
+.sb-Input:-ms-input-placeholder {
+  color: rgba(255,255,255,0.30);
+}
+
+.sb-Input:focus::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.54);
+}
+.sb-Input:focus:-moz-placeholder { /* Firefox 18- */
+  color: rgba(0,0,0,0.54);
+}
+.sb-Input:focus::-moz-placeholder {  /* Firefox 19+ */
+  color: rgba(0,0,0,0.54);
+}
+.sb-Input:focus:-ms-input-placeholder {
+  color: rgba(0,0,0,0.54);
+}

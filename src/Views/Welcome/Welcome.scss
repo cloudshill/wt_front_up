@@ -1,0 +1,50 @@
+
+.bs-Greet {
+  padding: 3rem;
+}
+
+.bs-Greet_Headline {
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.bs-Greet_Question {
+  margin-bottom: 2rem;
+}
+
+.bs-Greet_Answer {
+  color: $kelly-green;
+  margin-bottom: 1rem;
+}
+
+.bs-Greet_Explainer {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.bs-Greet_Button {
+  margin-bottom: 3rem;
+}
+
+.bs-Header {
+  color: $primary-grey;
+  font-weight: lighter;
+}
+
+.bs-Container {
+  text-align: center;
+  padding-bottom: 3.5rem;
+}
+
+.bs-Button {
+  @include mdc-button-filled-accessible($mdc-theme-secondary);
+  @include mdc-button-corner-radius(20px);
+}
+.bs-SpinnerContainer {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin: rem-calc(-100) 0 0 rem-calc(-100);
+}
+
+
