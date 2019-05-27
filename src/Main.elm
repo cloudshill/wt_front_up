@@ -43,8 +43,6 @@ init flags =
 type Msg
     = Inc
     | Set Int
-    | TestServer
-    | OnServerResponse (Result Http.Error String)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -55,42 +53,6 @@ update message model =
 
         Set m ->
             ( { model | counter = m }, toJs "Hello Js" )
-
-        TestServer ->
-            let
-                expect =
-                    Http.expectJson OnServerResponse (Decode.field "result" Decode.string)
-            in
-            ( model
-            , Http.get { url = "/test", expect = expect }
-            )
-
-        OnServerResponse res ->
-            case res of
-                Ok r ->
-                    ( { model | serverMessage = r }, Cmd.none )
-
-                Err err ->
-                    ( { model | serverMessage = "Error: " ++ httpErrorToString err }, Cmd.none )
-
-
-httpErrorToString : Http.Error -> String
-httpErrorToString err =
-    case err of
-        BadUrl _ ->
-            "BadUrl"
-
-        Timeout ->
-            "Timeout"
-
-        NetworkError ->
-            "NetworkError"
-
-        BadStatus _ ->
-            "BadStatus"
-
-        BadBody s ->
-            "BadBody: " ++ s
 
 
 {-| increments the counter
@@ -131,7 +93,6 @@ view model =
             , div [ class "pure-u-1-3" ]
                 [ button
                     [ class "pure-button pure-button-primary"
-                    , onClick TestServer
                     ]
                     [ text "ping dev server" ]
                 , text model.serverMessage
